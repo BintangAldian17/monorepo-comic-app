@@ -1,7 +1,24 @@
 {
-    "name": "app",
-    "private": true,
-    "version": "1.0.0",
-    "main": "index.ts",
-    "license": "MIT"
+  "name": "app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts",
+    "./ui/*": "./ui/*",
+    "./features": "./features",
+    "./config/tailwind/theme": "./config/tailwind/theme.ts",
+    "./config/tailwind/global.css": "./config/tailwind/global.css"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "nativewind": "^4.0.36",
+    "react-native-reanimated": "^3.15.0",
+    "react-native-web": "^0.19.12",
+    "tailwind-merge": "^2.5.2"
+  },
+  "devDependencies": {
+    "react-native": "0.73.6",
+    "tailwindcss-animate": "^1.0.7"
+  }
 }
