@@ -7,6 +7,7 @@ import 'raf/polyfill'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { StylesProvider } from 'app/provider/styles-provider.web'
+import { TrpcProvider } from '../contexts/TrpcContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <StylesProvider>{children}</StylesProvider>
+        <TrpcProvider>
+          <StylesProvider>{children}</StylesProvider>
+        </TrpcProvider>
       </body>
     </html>
   )
