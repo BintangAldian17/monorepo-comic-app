@@ -1,11 +1,9 @@
 'use client'
 
-import { AppRouter } from '../../server/src/router'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { createTRPCReact, httpBatchLink } from '@trpc/react-query'
+import { httpBatchLink } from '@trpc/react-query'
 import { createContext, PropsWithChildren, useContext, useState } from 'react'
-
-const trpc = createTRPCReact<AppRouter>()
+import { trpc } from '../_trpc/client'
 
 const trpcReactClient = trpc.createClient({
   links: [httpBatchLink({ url: 'http://localhost:8080/trpc' })]

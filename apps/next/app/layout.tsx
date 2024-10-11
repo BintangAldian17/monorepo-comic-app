@@ -7,7 +7,7 @@ import 'raf/polyfill'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { StylesProvider } from 'app/provider/styles-provider.web'
-import { TrpcProvider } from '../contexts/TrpcContext'
+import { TrpcProvider } from './_contexts/TrpcContext'
 
 const inter = Inter({ subsets: ['latin'] })
 

@@ -1,15 +1,15 @@
-'use client'
 /** @jsxImportSource react */
 import { Typography } from 'app/ui/typhography'
-import { useTrpc } from '../contexts/TrpcContext'
+import { serverClient } from './_trpc/server-client'
 
-export default function Home() {
-  const { trpc } = useTrpc()
-  const { data } = trpc.hello.helloWorld.useQuery()
-  console.log(data)
+export const dynamic = 'force-dynamic'
+
+export default async function Home() {
+  const data = await serverClient.hello.helloWorld.query()
+
   return (
     <Typography className="text-yellow-400" variant="h1">
-      Nice
+      {data}
     </Typography>
   )
 }
